@@ -1,0 +1,7 @@
+﻿.venv/
+__pycache__/
+.ipynb_checkpoints/
+data/raw/
+*.csv
+!ulasim_toplanmis_ozet.csv
+.DS_Store
