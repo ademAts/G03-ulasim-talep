@@ -17,7 +17,7 @@ st.set_page_config(
 st.title("🚌 İstanbul Toplu Ulaşım Talep Tahmini & Sefer Planlama")
 st.markdown("""
 **Proje:** P3 - G03 (Zaman Bazlı Regresyon) | **Ders:** Yapay Zekâ (Mersin Üniversitesi)  
-*Ekip: Adem Ataş (Veri), Yasin Özcan (ML), Hikmet Taha İlhan (Streamlit UI & Sunum)*
+*Hazırlayan: G03 Proje Ekibi*
 """)
 st.divider()
 
@@ -75,19 +75,16 @@ with tab1:
         gun_adlari = {0: "Pazartesi", 1: "Salı", 2: "Çarşamba", 3: "Perşembe", 4: "Cuma", 5: "Cumartesi", 6: "Pazar"}
         pv.columns = [gun_adlari.get(c, c) for c in pv.columns]
         
-        # Saatleri çok daha okunaklı format yapalım (08:00, 18:00 gibi)
         saat_etiketleri = [f"{s:02d}:00" for s in pv.index]
         pv.index = saat_etiketleri
         
-        # Sayıları tam sayıya yuvarlayalım
         pv_round = pv.round(0).astype(int)
         
-        # Çok daha belirgin ve sezgisel renk skalası: RdYlBu_r (Mavi -> Sarı -> Kırmızı)
         fig = px.imshow(
             pv_round,
-            text_auto=True, # Sayıları doğrudan kutuların içine yaz!
+            text_auto=True,
             labels=dict(x="Haftanın Günü", y="Saat Dilimi", color="Ortalama Yolcu"),
-            color_continuous_scale="Turbo", # Canlı ve aşırı net renk ayrımı
+            color_continuous_scale="Turbo",
             aspect="auto"
         )
         fig.update_layout(

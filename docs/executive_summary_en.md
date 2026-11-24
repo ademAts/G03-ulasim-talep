@@ -1,7 +1,7 @@
 ﻿# Executive Summary: Istanbul Public Transportation Demand & Weather Impact
 
 **Project:** P3 - G03 (Time-Based Regression)  
-**Lead Data Engineer:** Adem Atas (Student ID: 24430040022)  
+**Authors:** G03 Project Team  
 **Course:** AI for Decision Making - Management Information Systems, Mersin University  
 
 ---
